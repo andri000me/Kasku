@@ -1,0 +1,4 @@
+CREATE TABLE tb_jurusan (
+	id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	namajurusan VARCHAR(50) NOT NULL
+);

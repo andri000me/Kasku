@@ -1,0 +1,8 @@
+CREATE TABLE tb_pengguna (
+	id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	jurusan_id INT(11) NOT NULL,
+	nama VARCHAR(50) NOT NULL,
+	nim VARCHAR(10) NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	FOREIGN KEY(jurusan_id) REFERENCES tb_jurusan(id);
+);
