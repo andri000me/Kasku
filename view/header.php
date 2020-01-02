@@ -28,22 +28,27 @@
 		      <div class="sidebar-sticky">
 		        <ul class="nav flex-column">
 		          <li class="nav-item">
-		            <a class="nav-link active" href="index.html">
+		            <a class="nav-link active" href="index.php">
 		              <i class="fas fa-home"></i> Dashboard
 		            </a>
 		          </li>
 		          <li class="nav-item">
-		            <a class="nav-link" href="#">
+		            <a class="nav-link" href="jurusan.php">
+		              <i class="fas fa-university"></i> Jurusan
+		            </a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link" href="pengguna.php">
 		              <i class="fas fa-users"></i> Pengguna
 		            </a>
 		          </li>
 		          <li class="nav-item">
-		            <a class="nav-link" href="#">
+		            <a class="nav-link" href="kasmasuk.php">
 		              <i class="fas fa-money-bill-wave-alt"></i> Kas masuk
 		            </a>
 		          </li>
 		          <li class="nav-item">
-		            <a class="nav-link" href="#">
+		            <a class="nav-link" href="kaskeluar.php">
 		              <i class="fas fa-file-invoice-dollar"></i> Kas keluar
 		            </a>
 		          </li>

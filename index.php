@@ -1,4 +1,6 @@
 <?php 
+	require_once 'functions/crud.php';
+
 	require_once 'view/header.php';
  ?>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
