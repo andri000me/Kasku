@@ -22,4 +22,14 @@ function tambahPengguna($jurusan_id,$nama,$nim,$koneksi){
 	$stmt->bindParam(":nim",$nim); 
 	$stmt->execute();
 }
+
+function editPengguna($id,$jurusan_id,$nama,$nim,$koneksi){
+	$sql = "UPDATE tb_pengguna SET jurusan_id =:jurusan_id, nama =:nama, nim =:nim,password = '' WHERE id = :id";
+	$stmt =$koneksi->prepare($sql);
+	$stmt->bindParam(":jurusan_id",$jurusan_id); 
+	$stmt->bindParam(":nama",$nama); 
+	$stmt->bindParam(":nim",$nim); 
+	$stmt->bindParam(":id",$id); 
+	$stmt->execute();
+}
  ?>
