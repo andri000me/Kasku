@@ -16,8 +16,8 @@
 		<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
 		  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
 		  <ul class="navbar-nav px-3">
-		    <li class="nav-item text-nowrap">
-		      <a class="nav-link" href="#">Keluar</a>
+		    <li class="nav-item">
+		      <a class="nav-link" href="logout.php">Keluar</a>
 		    </li>
 		  </ul>
 		</nav>
@@ -32,26 +32,38 @@
 		              <i class="fas fa-home"></i> Dashboard
 		            </a>
 		          </li>
-		          <li class="nav-item">
-		            <a class="nav-link" href="jurusan.php">
-		              <i class="fas fa-university"></i> Jurusan
-		            </a>
-		          </li>
-		          <li class="nav-item">
-		            <a class="nav-link" href="pengguna.php">
-		              <i class="fas fa-users"></i> Pengguna
-		            </a>
-		          </li>
+		          <?php 
+		          if (isset($_SESSION['status']) === 'admin') { ?>
+			        <li class="nav-item">
+		              <a class="nav-link" href="pengguna.php">
+		                <i class="fas fa-users"></i> Pengguna
+		              </a>
+		            </li>
+		            <li class="nav-item">
+			            <a class="nav-link" href="jurusan.php">
+			              <i class="fas fa-university"></i> Jurusan
+			            </a>
+			          </li>
+					<?php } ?>
 		          <li class="nav-item">
 		            <a class="nav-link" href="kasmasuk.php">
 		              <i class="fas fa-money-bill-wave-alt"></i> Kas masuk
 		            </a>
 		          </li>
+		          <?php 
+		           if (isset($_SESSION['status']) === 'admin') { ?>
 		          <li class="nav-item">
 		            <a class="nav-link" href="pengeluaran.php">
 		              <i class="fas fa-boxes"></i> Jenis pengeluaran
 		            </a>
 		          </li>
+		          <?php }elseif ($_SESSION['status'] === 'bendahara') {?>
+		          	<li class="nav-item">
+		            <a class="nav-link" href="pengeluaran.php">
+		              <i class="fas fa-boxes"></i> Jenis pengeluaran
+		            </a>
+		          </li>
+		         <?php } ?>
 		          <li class="nav-item">
 		            <a class="nav-link" href="kaskeluar.php">
 		              <i class="fas fa-file-invoice-dollar"></i> Kas keluar

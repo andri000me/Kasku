@@ -1,7 +1,10 @@
 <?php 
-	require_once 'core/init.php';;
-
+	require_once 'core/init.php';
 	require_once 'view/header.php';
+
+	if (isset($_SESSION['nama']) == 0) {
+    header('location:login.php');
+	}
 
 	$id = $_GET['id'];
 	$sql = "SELECT * FROM tb_jenispengeluaran WHERE id = :id";

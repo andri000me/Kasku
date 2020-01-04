@@ -1,8 +1,9 @@
 <?php 
-	require_once 'core/init.php';;
-
+	require_once 'core/init.php';
 	require_once 'view/header.php';
-	date_default_timezone_set('Asia/Jakarta');
+	if (isset($_SESSION['nama']) == 0) {
+    header('location:login.php');
+	}
 
 	$id = $_GET['id'];
 	$sql = "SELECT * FROM tb_pengguna WHERE id = :id";

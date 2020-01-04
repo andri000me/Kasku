@@ -5,7 +5,7 @@
       	<script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
       	<script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-        <script src="dashboard.js"></script>
+        <script src="assets/js/dashboard.js"></script>
         <script src="https://kit.fontawesome.com/2bd31fcfdb.js" crossorigin="anonymous"></script>
 
     </body>

@@ -90,4 +90,20 @@ function editKaskeluar($id,$jenis_id,$deskripsi,$waktu,$jumlah,$koneksi){
 	$stmt->execute();
 }
 
+function login ($nim,$password,$koneksi){
+	$sql = "SELECT * tb_pengguna WHERE nim =:nim, password =:password ";
+	$stmt = $koneksi->prepare($sql);
+	$stmt->bindParam(":nim",$nim);
+	$stmt->bindParam(":password",$password);
+	$stmt->execute();
+}
+
+function gantiPass($id,$pass,$koneksi){
+	$sql = "UPDATE tb_pengguna SET password =:pass WHERE id = :id";
+	$stmt =$koneksi->prepare($sql);
+	$stmt->bindParam(":pass",$pass); 
+	$stmt->bindParam(":id",$id); 
+	$stmt->execute();
+}
+
  ?>

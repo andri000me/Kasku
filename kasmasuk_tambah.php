@@ -1,7 +1,10 @@
 <?php 
-	require_once 'core/init.php';;
-
+	require_once 'core/init.php';
 	require_once 'view/header.php';
+
+	if (isset($_SESSION['nama']) == 0) {
+    header('location:login.php');
+	}
 
  ?>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">

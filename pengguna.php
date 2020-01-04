@@ -1,7 +1,10 @@
 <?php 
 	require_once 'core/init.php';
-
 	require_once 'view/header.php';
+
+	if (isset($_SESSION['nama']) == 0) {
+    header('location:login.php');
+	}
 
 	$sql = "SELECT tb_pengguna.nama, tb_pengguna.nim, tb_jurusan.namajurusan, tb_pengguna.id, tb_pengguna.status FROM tb_pengguna INNER JOIN tb_jurusan ON tb_pengguna.jurusan_id = tb_jurusan.id";
 	$stmt = $koneksi->prepare($sql);

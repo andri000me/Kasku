@@ -1,7 +1,10 @@
 <?php 
 	require_once 'core/init.php';
-
 	require_once 'view/header.php';
+
+	if (isset($_SESSION['nama']) == 0) {
+    header('location:login.php');
+	}
 
 	$sql = "SELECT tb_kaskeluar.id, tb_kaskeluar.deskripsi, tb_kaskeluar.waktu, tb_kaskeluar.jumlah, tb_jenispengeluaran.jenis FROM tb_kaskeluar INNER JOIN tb_jenispengeluaran ON tb_kaskeluar.jenis_id = tb_jenispengeluaran.id";
 	$stmt = $koneksi->prepare($sql);
@@ -18,7 +21,11 @@
   </div>
   	<div class="row">
         <div class="col-md-12 text-right">
-        <a href="kaskeluar_tambah.php" class="btn btn-primary">Tambah Kas Keluar</a>
+        <?php  if (isset($_SESSION['status']) === 'admin') { ?> ?>
+        	<a href="kaskeluar_tambah.php" class="btn btn-primary">Tambah Kas Keluar</a>
+        <?php }elseif (($_SESSION['status']) === 'bendahara') { ?>
+        	<a href="kaskeluar_tambah.php" class="btn btn-primary">Tambah Kas Keluar</a>
+        <?php } ?>
         </div>
     </div><br>
   	<div class="table-responsive table-striped">
@@ -30,7 +37,11 @@
 		    	<th>Keterangan</th>
 		    	<th>Waktu</th>
 		    	<th>Jumlah Yang Dikeluarkan</th>
+		    	<?php  if (isset($_SESSION['status']) === 'admin') { ?>
 		    	<th class="text-center">Aksi</th>
+		    	<?php }elseif (($_SESSION['status']) === 'bendahara') {?>
+		    		<th class="text-center">Aksi</th>
+		    	<?php } ?>
 		    </tr>
 	    </thead>
 	    <?php 
@@ -44,10 +55,17 @@
 	    	<td><?= $row['deskripsi'] ?></td>
 	    	<td><?= $row['waktu'] ?></td>
 	    	<td><?= $row['jumlah'] ?></td>
+	    	<?php  if (isset($_SESSION['status']) === 'admin') { ?> ?>
 	    	<td class="text-center">
 	    		<a href="kaskeluar_edit.php?id=<?= $row['id'] ?>" class="btn btn-success btn-sm"><i class="far fa-edit"></i> Edit</a>
 	    		<a href="kaskeluar_hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Hapus</a>
 	    	</td>
+	    	<?php }elseif (($_SESSION['status']) === 'bendahara') { ?>
+	    	<td class="text-center">
+	    		<a href="kaskeluar_edit.php?id=<?= $row['id'] ?>" class="btn btn-success btn-sm"><i class="far fa-edit"></i> Edit</a>
+	    		<a href="kaskeluar_hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Hapus</a>
+	    	</td>
+	    	<?php } ?>
 	    </tr>
 	    <?php 
 	    		$no++;
