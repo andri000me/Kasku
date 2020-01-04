@@ -3,7 +3,7 @@
 
 	require_once 'view/header.php';
 
-	$sql = "SELECT tb_pengguna.nama, tb_pengguna.nim, tb_jurusan.namajurusan, tb_pengguna.id FROM tb_pengguna INNER JOIN tb_jurusan ON tb_pengguna.jurusan_id = tb_jurusan.id";
+	$sql = "SELECT tb_pengguna.nama, tb_pengguna.nim, tb_jurusan.namajurusan, tb_pengguna.id, tb_pengguna.status FROM tb_pengguna INNER JOIN tb_jurusan ON tb_pengguna.jurusan_id = tb_jurusan.id";
 	$stmt = $koneksi->prepare($sql);
 	$stmt->execute();
 
@@ -22,9 +22,10 @@
 	  	<thead>
 		    <tr>
 		    	<th>No</th>
-		    	<th>Nama Jurusan</th>
-		    	<th>Nama Pengguna</th>
 		    	<th>Nim</th>
+		    	<th>Nama Pengguna</th>
+		    	<th>Nama Jurusan</th>
+		    	<th>Status</th>
 		    	<th class="text-center">Aksi</th>
 		    </tr>
 	    </thead>
@@ -35,9 +36,11 @@
 	    	 ?>
 	    <tr>
 	    	<td><?= $no; ?></td>
-	    	<td><?= $row['namajurusan'] ?></td>
-	    	<td><?= $row['nama'] ?></td>
 	    	<td><?= $row['nim'] ?></td>
+	    	<td><?= $row['nama'] ?></td>
+	    	<td><?= $row['namajurusan'] ?></td>
+	    	<td><?= $row['status'] ?></td>
+
 	    	<td class="text-center">
 	    		<a href="pengguna_edit.php?id=<?= $row['id'] ?>" class="btn btn-success btn-sm"><i class="far fa-edit"></i> Edit</a>
 	    		<a href="pengguna_hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Hapus</a>

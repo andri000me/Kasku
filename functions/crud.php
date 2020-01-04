@@ -14,21 +14,23 @@ function editJurusan($id,$namajurusan,$koneksi){
 	$stmt->execute();
 }
 
-function tambahPengguna($jurusan_id,$nama,$nim,$koneksi){
-	$sql = "INSERT INTO tb_pengguna VALUES('',:jurusan_id,:nama,:nim,'')";
+function tambahPengguna($jurusan_id,$nama,$nim,$status,$koneksi){
+	$sql = "INSERT INTO tb_pengguna VALUES('',:jurusan_id,:nama,:nim,'',:status)";
 	$stmt =$koneksi->prepare($sql);
 	$stmt->bindParam(":jurusan_id",$jurusan_id); 
 	$stmt->bindParam(":nama",$nama); 
 	$stmt->bindParam(":nim",$nim); 
+	$stmt->bindParam(":status",$status); 
 	$stmt->execute();
 }
 
-function editPengguna($id,$jurusan_id,$nama,$nim,$koneksi){
-	$sql = "UPDATE tb_pengguna SET jurusan_id =:jurusan_id, nama =:nama, nim =:nim,password = '' WHERE id = :id";
+function editPengguna($id,$jurusan_id,$nama,$nim,$status,$koneksi){
+	$sql = "UPDATE tb_pengguna SET jurusan_id =:jurusan_id, nama =:nama, nim =:nim, password = '', status =:status WHERE id = :id";
 	$stmt =$koneksi->prepare($sql);
 	$stmt->bindParam(":jurusan_id",$jurusan_id); 
 	$stmt->bindParam(":nama",$nama); 
 	$stmt->bindParam(":nim",$nim); 
+	$stmt->bindParam(":status",$status); 
 	$stmt->bindParam(":id",$id); 
 	$stmt->execute();
 }
