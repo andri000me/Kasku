@@ -4,7 +4,7 @@
 	require_once 'view/header.php';
 
 	$id = $_GET['id'];
-	$sql = "SELECT * FROM tb_jurusan WHERE id = :id";
+	$sql = "SELECT * FROM tb_jenispengeluaran WHERE id = :id";
 	$stmt = $koneksi->prepare($sql);
 	$stmt->bindParam(":id", $id);
 	$stmt->execute();
@@ -16,11 +16,11 @@
   	</div>
   	<?php 
 	  	if (isset($_POST['submit'])) {
-	  		$namajurusan = $_POST['nama_jurusan'];
+	  		$jenis = $_POST['jenis'];
 
-	  		if (!empty(trim($namajurusan))) {
-	  			editJurusan($id,$namajurusan,$koneksi);
-	  			header('location: jurusan.php');
+	  		if (!empty(trim($jenis))) {
+	  			editPengeluaran($id,$jenis,$koneksi);
+	  			header('location: pengeluaran.php');
 	  		}
 	  	}
 
@@ -31,7 +31,7 @@
 				<form method="post">
 				  <div class="form-group">
 				    <label>Nama Jurusan</label>
-				    <input type="text" class="form-control" name="nama_jurusan" value="<?= $result['namajurusan'] ?>">
+				    <input type="text" class="form-control" name="jenis" value="<?= $result['jenis'] ?>">
 				  </div>
 				  <input type="submit" name="submit" class="btn btn-primary" value="Edit">
 				</form>

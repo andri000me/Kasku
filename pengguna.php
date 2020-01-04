@@ -23,7 +23,7 @@
 		    <tr>
 		    	<th>No</th>
 		    	<th>Nama Jurusan</th>
-		    	<th>Nama</th>
+		    	<th>Nama Pengguna</th>
 		    	<th>Nim</th>
 		    	<th class="text-center">Aksi</th>
 		    </tr>

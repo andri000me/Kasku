@@ -48,6 +48,11 @@
 		            </a>
 		          </li>
 		          <li class="nav-item">
+		            <a class="nav-link" href="pengeluaran.php">
+		              <i class="fas fa-boxes"></i> Jenis pengeluaran
+		            </a>
+		          </li>
+		          <li class="nav-item">
 		            <a class="nav-link" href="kaskeluar.php">
 		              <i class="fas fa-file-invoice-dollar"></i> Kas keluar
 		            </a>
