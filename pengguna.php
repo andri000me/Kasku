@@ -3,7 +3,7 @@
 
 	require_once 'view/header.php';
 
-	$sql = "SELECT * FROM tb_pengguna";
+	$sql = "SELECT tb_pengguna.nama, tb_pengguna.nim, tb_jurusan.namajurusan, tb_pengguna.id FROM tb_pengguna INNER JOIN tb_jurusan ON tb_pengguna.jurusan_id = tb_jurusan.id";
 	$stmt = $koneksi->prepare($sql);
 	$stmt->execute();
 
@@ -35,7 +35,7 @@
 	    	 ?>
 	    <tr>
 	    	<td><?= $no; ?></td>
-	    	<td><?= $row['jurusan_id'] ?></td>
+	    	<td><?= $row['namajurusan'] ?></td>
 	    	<td><?= $row['nama'] ?></td>
 	    	<td><?= $row['nim'] ?></td>
 	    	<td class="text-center">
