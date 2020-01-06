@@ -3,7 +3,7 @@
 	<head>
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	    <title>Kasidu</title>
+	    <title>Sipuas</title>
 
 
 	    <!-- Bootstrap core CSS -->
@@ -28,12 +28,12 @@
 		      <div class="sidebar-sticky">
 		        <ul class="nav flex-column">
 		          <li class="nav-item">
-		            <a class="nav-link active" href="index.php">
+		            <a class="nav-link" href="index.php">
 		              <i class="fas fa-home"></i> Dashboard
 		            </a>
 		          </li>
 		          <?php 
-		          if (isset($_SESSION['status']) === 'admin') { ?>
+		          if ($_SESSION['status'] === 'admin') { ?>
 			        <li class="nav-item">
 		              <a class="nav-link" href="pengguna.php">
 		                <i class="fas fa-users"></i> Pengguna
@@ -51,7 +51,7 @@
 		            </a>
 		          </li>
 		          <?php 
-		           if (isset($_SESSION['status']) === 'admin') { ?>
+		           if ($_SESSION['status'] === 'admin') { ?>
 		          <li class="nav-item">
 		            <a class="nav-link" href="pengeluaran.php">
 		              <i class="fas fa-boxes"></i> Jenis pengeluaran

@@ -4,5 +4,6 @@ CREATE TABLE tb_pengguna (
 	nama VARCHAR(50) NOT NULL,
 	nim VARCHAR(10) NOT NULL,
 	password VARCHAR(255) NOT NULL,
+	status VARCHAR(11) NOT NULL,
 	FOREIGN KEY(jurusan_id) REFERENCES tb_jurusan(id)
 );

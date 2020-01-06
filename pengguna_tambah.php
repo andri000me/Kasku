@@ -19,10 +19,11 @@
 	  		$jurusan_id = $_POST['jurusan_id'];
 	  		$nama = $_POST['nama'];
 	  		$nim = $_POST['nim'];
+	  		$password = $_POST['nim'];
 	  		$status = $_POST['status'];
 
 	  		if (!empty(trim($jurusan_id)) && !empty(trim($nama)) && !empty(trim($nim)) ) {
-	  			tambahPengguna($jurusan_id,$nama,$nim,$status,$koneksi);
+	  			tambahPengguna($jurusan_id,$nama,$nim,$password,$status,$koneksi);
 	  			header('location: pengguna.php');
 	  		}
 	  	}

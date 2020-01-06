@@ -9,7 +9,7 @@
 	<head>
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	    <title>Kasidu</title>
+	    <title>Sipuas</title>
 
 
 	    <!-- Bootstrap core CSS -->
@@ -18,7 +18,7 @@
 	    <link href="assets/css/dashboard.css" rel="stylesheet">
 
   	</head>
-  	<body>
+  	<body class="bg-login">
   		<?php 
 
   		if (isset($_POST['submit'])) {
@@ -48,7 +48,7 @@
 						<hr>
 						<form action="" method="post">
 						  <div class="form-group">
-						    <input type="text" class="form-control" placeholder="Username pengguna" name="nim">
+						    <input type="text" class="form-control" placeholder="Nim pengguna" name="nim">
 						  </div>
 						  <div class="form-group">
 						    <input type="password" class="form-control" name="password" placeholder="Password pengguna">

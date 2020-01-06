@@ -14,12 +14,13 @@ function editJurusan($id,$namajurusan,$koneksi){
 	$stmt->execute();
 }
 
-function tambahPengguna($jurusan_id,$nama,$nim,$status,$koneksi){
-	$sql = "INSERT INTO tb_pengguna VALUES('',:jurusan_id,:nama,:nim,'',:status)";
+function tambahPengguna($jurusan_id,$nama,$nim,$password,$status,$koneksi){
+	$sql = "INSERT INTO tb_pengguna VALUES('',:jurusan_id,:nama,:nim,:password,:status)";
 	$stmt =$koneksi->prepare($sql);
 	$stmt->bindParam(":jurusan_id",$jurusan_id); 
 	$stmt->bindParam(":nama",$nama); 
 	$stmt->bindParam(":nim",$nim); 
+	$stmt->bindParam(":password",$password); 
 	$stmt->bindParam(":status",$status); 
 	$stmt->execute();
 }

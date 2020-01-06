@@ -21,7 +21,7 @@
   </div>
   	<div class="row">
         <div class="col-md-12 text-right">
-        <?php  if (isset($_SESSION['status']) === 'admin') { ?> ?>
+        <?php  if ($_SESSION['status'] === 'admin') { ?>
         	<a href="kaskeluar_tambah.php" class="btn btn-primary">Tambah Kas Keluar</a>
         <?php }elseif (($_SESSION['status']) === 'bendahara') { ?>
         	<a href="kaskeluar_tambah.php" class="btn btn-primary">Tambah Kas Keluar</a>
@@ -37,7 +37,7 @@
 		    	<th>Keterangan</th>
 		    	<th>Waktu</th>
 		    	<th>Jumlah Yang Dikeluarkan</th>
-		    	<?php  if (isset($_SESSION['status']) === 'admin') { ?>
+		    	<?php  if ($_SESSION['status'] === 'admin') { ?>
 		    	<th class="text-center">Aksi</th>
 		    	<?php }elseif (($_SESSION['status']) === 'bendahara') {?>
 		    		<th class="text-center">Aksi</th>
@@ -55,7 +55,7 @@
 	    	<td><?= $row['deskripsi'] ?></td>
 	    	<td><?= $row['waktu'] ?></td>
 	    	<td><?= $row['jumlah'] ?></td>
-	    	<?php  if (isset($_SESSION['status']) === 'admin') { ?> ?>
+	    	<?php  if ($_SESSION['status'] === 'admin') { ?>
 	    	<td class="text-center">
 	    		<a href="kaskeluar_edit.php?id=<?= $row['id'] ?>" class="btn btn-success btn-sm"><i class="far fa-edit"></i> Edit</a>
 	    		<a href="kaskeluar_hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Hapus</a>

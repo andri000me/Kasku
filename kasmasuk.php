@@ -21,7 +21,7 @@
   </div>
   	<div class="row">
         <div class="col-md-12 text-right">
-        	<?php  if (isset($_SESSION['status']) === 'admin') { ?>
+        	<?php  if ($_SESSION['status'] === 'admin') { ?>
         	<a href="kasmasuk_tambah.php" class="btn btn-primary">Tambah Kas Masuk</a>
         <?php }elseif (($_SESSION['status']) === 'bendahara') {?>
 			<a href="kasmasuk_tambah.php" class="btn btn-primary">Tambah Kas Masuk</a>
@@ -36,7 +36,7 @@
 		    	<th>Nama Pengguna</th>
 		    	<th>Waktu</th>
 		    	<th>Jumlah</th>
-		    	<?php  if (isset($_SESSION['status']) === 'admin') { ?>
+		    	<?php  if ($_SESSION['status'] === 'admin') { ?>
 		    	<th class="text-center">Aksi</th>
 		    	<?php }elseif (($_SESSION['status']) === 'bendahara') {?>
 		    		<th class="text-center">Aksi</th>
@@ -53,7 +53,7 @@
 	    	<td><?= $row['nama'] ?></td>
 	    	<td><?= $row['waktu'] ?></td>
 	    	<td><?= $row['jumlah'] ?></td>
-	    	<?php  if (isset($_SESSION['status']) === 'admin') { ?>
+	    	<?php  if ($_SESSION['status'] === 'admin') { ?>
 	    	<td class="text-center">
 	    		<a href="kasmasuk_edit.php?id=<?= $row['id'] ?>" class="btn btn-success btn-sm"><i class="far fa-edit"></i> Edit</a>
 	    		<a href="kasmasuk_hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Hapus</a>
